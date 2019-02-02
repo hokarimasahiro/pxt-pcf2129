@@ -165,7 +165,7 @@ namespace PCF2129 {
     /**
      * get Second
      */
-    //% blockId="getMinutseconde" block="get second"
+    //% blockId="getseconde" block="get second"
     //% weight=88 blockGap=8
     export function getSecond(): number {
         return HexToDec(getReg(REG_SECOND))
@@ -179,6 +179,24 @@ namespace PCF2129 {
     //% weight=87 blockGap=8
     export function setSecond(dat: number): void {
         setReg(REG_SECOND, DecToHex(dat))
+    }
+
+    /**
+     * get osf
+     */
+    //% blockId="getOsf" block="get OSF"
+    //% weight=86 blockGap=8
+    export function getOsf(): boolean {
+        return (getReg(REG_SECOND) & 0x80)==0 ? true:false
+    }
+
+    /**
+     * reset osf
+     */
+    //% blockId="resetOsf" block="reset OSF"
+    //% weight=85 blockGap=8
+    export function resetOsf(): void {
+        setReg(REG_SECOND, getReg(REG_SECOND) & 0x7f)
     }
 
     /**
