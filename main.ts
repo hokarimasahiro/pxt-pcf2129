@@ -200,8 +200,8 @@ namespace PCF2129 {
         buf[1] = DecToHex(second);
         buf[2] = DecToHex(minute);
         buf[3] = DecToHex(hour);
-        buf[4] = DecToHex(weekday);
-        buf[5] = DecToHex(day);
+        buf[4] = DecToHex(day);
+        buf[5] = DecToHex(weekday);
         buf[6] = DecToHex(month);
         buf[7] = DecToHex(year);
         pins.i2cWriteBuffer(I2C_ADDR, buf)
