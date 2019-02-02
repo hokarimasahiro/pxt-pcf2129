@@ -116,7 +116,7 @@ namespace PCF2129 {
 
     /**
      * set weekday
-     * @param dat data of weekday, eg: 5
+     * @param dat data of weekday, eg: 4
      */
     //% blockId="setWeekday" block="set weekday %dat"
     //% weight=93 blockGap=8
@@ -186,7 +186,7 @@ namespace PCF2129 {
      * @param year data of year, eg: 2019
      * @param month data of month, eg: 3
      * @param day data of day, eg: 14
-     * @param weekday data of weekday, eg: 1
+     * @param weekday data of weekday, eg: 4
      * @param hour data of hour, eg: 5
      * @param minute data of minute, eg: 30
      * @param second data of second, eg: 0
