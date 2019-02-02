@@ -45,7 +45,7 @@ namespace PCF2129 {
      * convert a Dec data to BCD
      */
     function DecToHex(dat: number): number {
-        return Math.trunc(dat / 10) << 4 || (dat % 10)
+        return Math.trunc(dat / 10) << 4 | (dat % 10)
     }
 
     /**
