@@ -54,7 +54,7 @@ namespace PCF2129 {
     //% blockId="getYear" block="get year"
     //% weight=100 blockGap=8
     export function getYear(): number {
-        return (HexToDec(getReg(REG_YEAR)) + 2000)
+        return (HexToDec(getReg(REG_YEAR)))
     }
 
     /**
@@ -83,7 +83,7 @@ namespace PCF2129 {
     //% blockId="setMonth" block="set month %dat"
     //% weight=97 blockGap=8
     export function setMonth(dat: number): void {
-        setReg(REG_MONTH, DecToHex(dat))
+        setReg(REG_MONTH, DecToHex(dat % 13))
     }
 
     /**
@@ -102,7 +102,7 @@ namespace PCF2129 {
     //% blockId="setDay" block="set day %dat"
     //% weight=95 blockGap=8
     export function setDay(dat: number): void {
-        setReg(REG_DAY, DecToHex(dat))
+        setReg(REG_DAY, DecToHex(dat % 32))
     }
 
     /**
@@ -121,7 +121,7 @@ namespace PCF2129 {
     //% blockId="setWeekday" block="set weekday %dat"
     //% weight=93 blockGap=8
     export function setWeekday(dat: number): void {
-        setReg(REG_WEEKDAY, DecToHex(dat))
+        setReg(REG_WEEKDAY, DecToHex(dat % 7))
     }
 
     /**
@@ -140,7 +140,7 @@ namespace PCF2129 {
     //% blockId="setHour" block="set hour %dat"
     //% weight=91 blockGap=8
     export function setHour(dat: number): void {
-        setReg(REG_HOUR, DecToHex(dat))
+        setReg(REG_HOUR, DecToHex(dat % 24))
     }
 
     /**
@@ -159,7 +159,7 @@ namespace PCF2129 {
     //% blockId="setMinute" block="set minute %dat"
     //% weight=89 blockGap=8
     export function setMinute(dat: number): void {
-        setReg(REG_MINUTE, DecToHex(dat))
+        setReg(REG_MINUTE, DecToHex(dat % 60))
     }
 
     /**
@@ -178,7 +178,7 @@ namespace PCF2129 {
     //% blockId="setSecond" block="set second %dat"
     //% weight=87 blockGap=8
     export function setSecond(dat: number): void {
-        setReg(REG_SECOND, DecToHex(dat))
+        setReg(REG_SECOND, DecToHex(dat % 60))
     }
 
     /**
