@@ -8,6 +8,9 @@
 //% weight=10 color=#0fbc11 icon="\uf017" block="PCF2129"
 namespace PCF2129 {
     let I2C_ADDR = 0x51
+    let REG_CTRL1=0x00
+    let REG_CTRL2=0x01
+    let REG_CTRL3=0x02
     let REG_SECOND = 0x03
     let REG_MINUTE = 0x04
     let REG_HOUR = 0x05
@@ -197,6 +200,25 @@ namespace PCF2129 {
     //% weight=85 blockGap=8
     export function resetOsf(): void {
         setReg(REG_SECOND, getReg(REG_SECOND) & 0x7f)
+        setReg(REG_CTRL1, 0x00)
+    }
+
+    /**
+     * stop clock
+     */
+    //% blockId="stopclock" block="stop clock"
+    //% weight=83 blockGap=8
+    export function stopClock(): void {
+        setReg(REG_CTRL1, 0x20)
+    }
+
+    /**
+     * start clock
+     */
+    //% blockId="startlock" block="start clock"
+    //% weight=82 blockGap=8
+    export function startClock(): void {
+        setReg(REG_CTRL1, 0x00)
     }
 
     /**
