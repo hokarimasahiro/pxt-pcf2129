@@ -76,7 +76,7 @@ namespace PCF2129 {
     //% blockId="getmMonth" block="get month"
     //% weight=98 blockGap=8
     export function getMonth(): number {
-        return HexToDec(getReg(REG_MONTH))
+        return HexToDec(getReg(REG_MONTH) & 0x1f)
     }
 
     /**
@@ -95,7 +95,7 @@ namespace PCF2129 {
     //% blockId="getDay" block="get day"
     //% weight=96 blockGap=8
     export function getDay(): number {
-        return HexToDec(getReg(REG_DAY))
+        return HexToDec(getReg(REG_DAY) & 0x3f)
     }
 
     /**
@@ -114,7 +114,7 @@ namespace PCF2129 {
     //% blockId="getWeekday" block="get weekday"
     //% weight=94 blockGap=8
     export function getWeekday(): number {
-        return HexToDec(getReg(REG_WEEKDAY))
+        return HexToDec(getReg(REG_WEEKDAY) & 0x07)
     }
 
     /**
@@ -133,7 +133,7 @@ namespace PCF2129 {
     //% blockId="getHour" block="get hour"
     //% weight=92 blockGap=8
     export function getHour(): number {
-        return HexToDec(getReg(REG_HOUR))
+        return HexToDec(getReg(REG_HOUR) & 0x3f)
     }
 
     /**
@@ -152,7 +152,7 @@ namespace PCF2129 {
     //% blockId="getMinute" block="get minute"
     //% weight=90 blockGap=8
     export function getMinute(): number {
-        return HexToDec(getReg(REG_MINUTE))
+        return HexToDec(getReg(REG_MINUTE) & 0x7f)
     }
 
     /**
@@ -171,7 +171,7 @@ namespace PCF2129 {
     //% blockId="getseconde" block="get second"
     //% weight=88 blockGap=8
     export function getSecond(): number {
-        return HexToDec(getReg(REG_SECOND))
+        return HexToDec(getReg(REG_SECOND) & 0x7f)
     }
 
     /**
