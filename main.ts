@@ -190,7 +190,8 @@ namespace PCF2129 {
     //% blockId="getOsf" block="get OSF"
     //% weight=86 blockGap=8
     export function getOsf(): boolean {
-        return (getReg(REG_SECOND) & 0x80)==0 ? false:true
+        if ((getReg(REG_SECOND) & 0x80)!=0) return true;
+        else return false;
     }
 
     /**
