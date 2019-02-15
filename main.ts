@@ -5,12 +5,12 @@
 /**
  * PCF2129 block
  */
-//% weight=10 color=#0fbc11 icon="\uf017" block="PCF2129"
+//% weight=10 color=#800000 icon="\uf017" block="PCF2129"
 namespace PCF2129 {
     let I2C_ADDR = 0x51
-    let REG_CTRL1=0x00
-    let REG_CTRL2=0x01
-    let REG_CTRL3=0x02
+    let REG_CTRL1 = 0x00
+    let REG_CTRL2 = 0x01
+    let REG_CTRL3 = 0x02
     let REG_SECOND = 0x03
     let REG_MINUTE = 0x04
     let REG_HOUR = 0x05
@@ -187,10 +187,10 @@ namespace PCF2129 {
     /**
      * get osf
      */
-    //% blockId="getOsf" block="get OSF"
+    //% blockId="isOsf" block="test OSF"
     //% weight=86 blockGap=8
-    export function getOsf(): boolean {
-        if ((getReg(REG_SECOND) & 0x80)!=0) return true;
+    export function isOsf(): boolean {
+        if ((getReg(REG_SECOND) & 0x80) != 0) return true;
         else return false;
     }
 
@@ -207,18 +207,18 @@ namespace PCF2129 {
     /**
      * stop clock
      */
-    //% blockId="stopclock" block="stop clock"
+    //% blockId="stop" block="stop clock"
     //% weight=83 blockGap=8
-    export function stopClock(): void {
+    export function stop(): void {
         setReg(REG_CTRL1, 0x20)
     }
 
     /**
      * start clock
      */
-    //% blockId="startlock" block="start clock"
+    //% blockId="start" block="start clock"
     //% weight=82 blockGap=8
-    export function startClock(): void {
+    export function start(): void {
         setReg(REG_CTRL1, 0x00)
     }
 
